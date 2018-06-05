@@ -1,0 +1,39 @@
+.list-game-page {
+	h2.list-title {
+		text-align:center;
+		margin-top: 40px!important;
+		font-size: 25px;
+	    font-family: 'Plutoblack';
+	    margin-bottom: 10px;
+	    color: #e11941;
+	}
+	h4 {
+		font-family: 16px;
+		text-align:center;
+		margin-top:0px;
+		margin-bottom:30px;
+	}
+	h5 {
+		font-size: 14px;
+		color: #000;	
+	}
+	p {
+		font-size: 14px;
+		color: #000;
+	}
+}
+ion-label ion-icon {
+    width: 46px;
+    text-align: center;
+    margin-top: 2px;
+}ion-icon.icon.icon-md.ion-md-home.item-icon {}
+ion-item h2 {
+	font-family: 'Plutoblack';
+	font-size: 16px;
+	    color: #e11941;
+
+}
+ion-menu .content ion-list {
+	margin-top:10px;
+
+}

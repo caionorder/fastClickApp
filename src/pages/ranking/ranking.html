@@ -1,0 +1,91 @@
+<ion-header class="background-transparent">
+	<div style="height: 170px; background: url(/assets/img/bg-hme.png); background-size:cover;background-position: center;">
+		<ion-navbar style="background: transparent!important;">
+		</ion-navbar>
+
+		<div *ngIf="clicks" class="header-ranking" style="padding: 0px 20px;">
+			<h1>
+				Você foi classificado em <b>1º lugar</b>
+			</h1>
+		</div>
+    <div *ngIf="!clicks" class="header-ranking" style="padding: 0px 20px;">
+      <h1>
+        Confira a classificação da última etapa
+      </h1>
+    </div>
+	</div>
+</ion-header>
+<ion-content class="ranking">
+	<div style="padding: 10px 10px;">
+	<h4>Confira o Ranking:</h4>
+	</div>
+  <ion-list>
+    <ion-item>
+      Não existem pessoas neste Ranking.
+    </ion-item>
+  </ion-list>
+  <ion-list style="display: none;" class="ranking-list">
+    <ion-item>
+      <h2 item-start style="font-size: 24px;">1º </h2>
+      <ion-avatar item-start>
+        <span>JE</span>
+      </ion-avatar>
+      <h2 style="font-size:15px;">Jorge Eduardo</h2>
+      <p style="font-size: 13px;">Cliques: 123</p>
+      <button icon-left round ion-button item-end>
+      <ion-icon name="logo-facebook"></ion-icon>
+      Perfil do Facebook
+    </button>
+    </ion-item>
+    <ion-item>
+      <h2 item-start style="font-size: 24px;">2º </h2>
+      <ion-avatar style="background: url(https://scontent.fbfh1-2.fna.fbcdn.net/v/t1.0-9/27858345_10211543776410999_1539497760131682680_n.jpg?_nc_cat=0&oh=3692a5d56ce0da0426c804f45f5ed87a&oe=5B55C1D9); background-size: cover;" item-start>
+      </ion-avatar>
+      <h2 style="font-size:15px;">Caio Norder</h2>
+      <p style="font-size: 13px;">Cliques: 87</p>
+      <button icon-left round ion-button item-end>
+      <ion-icon name="logo-facebook"></ion-icon>
+      Perfil do Facebook
+    </button>
+    </ion-item>
+    <ion-item>
+      <h2 item-start style="font-size: 24px;">3º </h2>
+      <ion-avatar style="background: url(https://scontent.fbfh1-2.fna.fbcdn.net/v/t31.0-8/20729078_1556885667706439_231851558754113945_o.jpg?_nc_cat=0&oh=7272f15f5e46d0c892ed9408b1471ae8&oe=5B924C23); background-size: cover;" item-start>
+      </ion-avatar>
+      <h2 style="font-size:15px;">Douglas Gabriel</h2>
+      <p style="font-size: 13px;">Cliques: 85</p>
+      <button icon-left round ion-button item-end>
+      <ion-icon name="logo-facebook"></ion-icon>
+      Perfil do Facebook
+    </button>
+    </ion-item>
+    <ion-item>
+      <h2 item-start style="font-size: 24px;">4º </h2>
+      <ion-avatar item-start>
+        <span>LC</span>
+      </ion-avatar>
+      <h2 style="font-size:15px;">Leandro</h2>
+      <p style="font-size: 13px;">Cliques: 77</p>
+      <button icon-left round ion-button item-end>
+      <ion-icon name="logo-facebook"></ion-icon>
+      Perfil do Facebook
+    </button>
+    </ion-item>
+    <ion-item>
+      <h2 item-start style="font-size: 24px;">5º </h2>
+      <ion-avatar item-start>
+        <span>BG</span>
+      </ion-avatar>
+      <h2 style="font-size:15px;">Bia Giacomelli</h2>
+      <p style="font-size: 13px;">Cliques: 66</p>
+      <button icon-left round ion-button item-end>
+      <ion-icon name="logo-facebook"></ion-icon>
+      Perfil do Facebook
+    </button>
+    </ion-item>
+</ion-list>
+
+<p style="padding: 15px;">Este Ranking é fake para demonstração no jogo teste(Leandro)</p>
+
+
+</ion-content>

@@ -1,0 +1,14 @@
+.modal-header {
+	background:transparent;
+	box-shadow: none!important;
+	color: #000!important;
+	&:after {
+		display:none;
+	}
+	.toolbar-background-md {
+		background:transparent!important;
+	}	
+}
+.swiper-pagination {
+    display: none!important;
+}

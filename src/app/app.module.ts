@@ -1,28 +1,85 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
+import { CadastroPage } from '../pages/cadastro/cadastro';
+import { Facebook } from '@ionic-native/facebook';
+
+import { PlanosPage } from '../pages/planos/planos';
+import { ModalPage } from '../pages/modal/modal';
+
+import { RankingPage } from '../pages/ranking/ranking';
+
+import { PagamentoPage } from '../pages/pagamento/pagamento';
+import { PagamentoService } from '../pages/pagamento/pagamento.service';
+
+import { ListPage } from '../pages/list/list';
+import { BrMaskerModule } from 'brmasker-ionic-3';
+
+import { InstitucionalPage } from '../pages/institucional/institucional';
+
+import { GamePage } from '../pages/game/game';
+import { PlayerPage } from '../pages/game/player/player';
+import { PlayerService } from '../pages/game/player/player.service';
+
+
+import { ListGamePage } from '../pages/game/list/list';
+import { ListService } from '../pages/game/list/list.service';
+
+
+import { LoginService } from '../pages/login/login.service';
+import { CadastroService } from '../pages/cadastro/cadastro.service';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    LoginPage,
+    PagamentoPage,
+    CadastroPage,
+    GamePage,
+    ListGamePage,
+    ListPage,
+    PlayerPage,
+    ModalPage,
+    RankingPage,
+    PlanosPage,
+    InstitucionalPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    BrMaskerModule,
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    CadastroPage,
+    LoginPage,
+    PagamentoPage,
+    GamePage,
+    ListGamePage,
+    ListPage,
+    PlayerPage,
+    ModalPage,
+    RankingPage,
+    PlanosPage,
+    InstitucionalPage
   ],
   providers: [
     StatusBar,
+    CadastroService,
+    PagamentoService,
+    PlayerService,
+    Facebook,
+    ListService,
+    LoginService,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

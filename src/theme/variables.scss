@@ -24,7 +24,6 @@ $app-direction: ltr;
 
 
 
-
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -33,11 +32,79 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+$SIDEMENU_TOP: #AC0B3E;
+$SIDEMENU_BOTTOM: #E90556;
+
+$toolbar-background: #AC0B3E;
+.toolbar-background-md {
+    background-image: url(../../assets/img/bg-hme.png)!important;
+    background-size:cover!important;
+    background-position:0px 480px !important;
+}
+ion-menu {
+    
+.toolbar-background {
+    background: transparent!important;
+    text-align: center;
+    font-weight: bold;
+}
+.toolbar-title-md {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+}
+ion-menu .content {
+
+    background: url(../../assets/img/bg-hme.png);
+    background-size:cover;
+    background-repeat: repeat-x;
+    ion-list {
+    	margin-top: 30px;
+    }
+    .list {
+    	background:transparent;
+    	.btn-menu {
+    		background: transparent;
+    		border: 0px;
+    		font-size: 16px;
+    		font-weight: bold!important;
+    		color: #fff;
+    	}
+    	.item-inner {
+    		border:0px;
+    	}
+    }
+
+nav#menuresponsivo #rede-sociais {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+nav#menuresponsivo #rede-sociais a {
+    margin: 0 10px;
+    color: #FFF;
+    font-family: 'Plutoregular';
+    font-size: 14px;
+}
+nav#menuresponsivo #rede-sociais a .fa {
+    font-size: 18px;
+    margin-right: 5px;
+}
+}
+
+.toolbar-background-ios{
+    background-image: url(../../assets/img/bg-hme.png) !important;
+    background-position-y: 450px!important;
+    background-size: cover!important;
+}
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #e11941,
+  secondary:  #fff,
+  facebook:   #4267B2,
   danger:     #f53d3d,
-  light:      #f4f4f4,
+  light:      #fff,
   dark:       #222
 );
 
@@ -47,7 +114,9 @@ $colors: (
 // iOS only Sass variables can go here
 
 
-
+$font-family-md-base: "Plutoregular";
+$font-family-ios-base: "Plutoregular";
+$font-family-wp-base: "Plutoregular";
 
 // App Material Design Variables
 // --------------------------------------------------

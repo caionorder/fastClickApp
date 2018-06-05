@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding [formGroup]="form">
+
+  <ion-item>
+    <ion-label color="primary" floating>E-mail</ion-label>
+    <ion-input formControlName="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Senha</ion-label>
+    <ion-input formControlName="senha" type="password"></ion-input>
+  </ion-item>
+  <br>
+  <button ion-button full round (click)="login()">Entrar</button>
+
+</ion-content>

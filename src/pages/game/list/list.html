@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+    </ion-title>
+     <ion-buttons end>
+      <div *ngIf="logged()" style="color: #fff; font-size: 16px;">
+        Seu saldo  atual é <b>R$ {{localStorage.saldo}}</b>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="list-game-page">
+  <div style="display: inline-block;background: transparent;">
+  <h2 class="list-title">Próximos Jogos</h2>
+  <h4>O jogos terão início no dia do preenchimento total das vagas.</h4>
+  </div>
+  <ion-list>
+  <ion-item  *ngFor="let item of list">
+    <ion-thumbnail item-start>
+      <img [src]="'http://fastclickapp.com.br/admin/upload/games/' + item.Game.picture">
+    </ion-thumbnail>
+    <h2 color="secondary" style="font-weight: bold">{{item.Game.title}}</h2>
+    <h5 style="padding-top: 4px;"><b>R$ {{item.Game.minvalor}}</b></h5>
+    <p *ngIf="item.Game.id==90"><b>Etapa 1</b> - R$ 1,20</p>
+    <div style="margin:3px!important" item-end>
+      <button style="margin: 0px 10px;font-size: 13px;font-weight: bold;" (click)="openGame(item.Game.id)" color="primary" item-end ion-button round>Jogar Agora</button>
+      <br>
+      <button (click)="openRegra(item.Game.regras)" style="float: right;margin: 15px 15px;" color="primary" item-end ion-button round>REGRAS</button>
+    </div>
+    
+
+  </ion-item>
+</ion-list>
+</ion-content>

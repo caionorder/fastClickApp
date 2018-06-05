@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>eeMovel</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="com.app.fastclick" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Fast Click</name>
+    <description>App fast click.</description>
+    <author email="douglasdm97@gmail.com" href="http://grupoartisan.com.br/">Douglas Gabriel Cardoso</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -81,4 +81,12 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="1.1.19" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
+    <engine name="android" spec="~7.0.0" />
+    <plugin name="cordova-plugin-facebook4" spec="^2.1.0">
+        <variable name="APP_ID" value="205335910265620" />
+        <variable name="APP_NAME" value="fast-click" />
+        <variable name="ANDROID_SDK_VERSION" value="4.+" />
+    </plugin>
+    <allow-navigation href="http://192.168.0.36:8100" />
+    <allow-navigation href="http://192.168.0.11:8100" />
 </widget>

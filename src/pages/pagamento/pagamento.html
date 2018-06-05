@@ -1,0 +1,159 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Pagamento</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+
+    <form [formGroup]="form" (ngSubmit)="finalizar()">
+  
+        <ion-item>
+            <ion-label color="primary" floating>Endereço</ion-label>
+            <ion-input formControlName="endereco"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.endereco?.errors?.required && form.controls.endereco.touched">
+            <ion-label class="error-text"> Endereço é Obrigatório </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Número</ion-label>
+            <ion-input formControlName="numero"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.numero?.errors?.required && form.controls.numero.touched">
+            <ion-label class="error-text"> Número é Obrigatório </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Complemento</ion-label>
+            <ion-input formControlName="complemento"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.complemento?.errors?.required && form.controls.complemento.touched">
+            <ion-label class="error-text"> Complemento é Obrigatório </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Bairro</ion-label>
+            <ion-input formControlName="bairro"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.bairro?.errors?.required && form.controls.bairro.touched">
+            <ion-label class="error-text"> Bairro é Obrigatório </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Cidade</ion-label>
+            <ion-input formControlName="cidade"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.cidade?.errors?.required && form.controls.cidade.touched">
+            <ion-label class="error-text"> Cidade é Obrigatório </ion-label>
+        </span>
+        <br>
+        <ion-item>
+            <ion-label>Estado</ion-label>
+            <ion-select formControlName="estado">
+                <ion-option value="Acre">Acre</ion-option>
+                <ion-option value="Alagoas">Alagoas</ion-option>
+                <ion-option value="Amazonas">Amazonas</ion-option>
+                <ion-option value="Amapá">Amapá</ion-option>
+                <ion-option value="Bahia">Bahia</ion-option>
+                <ion-option value="Ceará">Ceará</ion-option>
+                <ion-option value="Distrito Federal">Distrito Federal</ion-option>
+                <ion-option value="Espírito Santo">Espírito Santo</ion-option>
+                <ion-option value="Goiás">Goiás</ion-option>
+                <ion-option value="Maranhão">Maranhão</ion-option>
+                <ion-option value="Minas Gerais">Minas Gerais</ion-option>
+                <ion-option value="Mato Grosso do Sul">Mato Grosso do Sul</ion-option>
+                <ion-option value="Mato Grosso">Mato Grosso</ion-option>
+                <ion-option value="Pará">Pará</ion-option>
+                <ion-option value="Paraíba">Paraíba</ion-option>
+                <ion-option value="Pernambuco">Pernambuco</ion-option>
+                <ion-option value="Piauí">Piauí</ion-option>
+                <ion-option value="Paraná">Paraná</ion-option>
+                <ion-option value="Rio de Janeiro">Rio de Janeiro</ion-option>
+                <ion-option value="Rio Grande do Norte">Rio Grande do Norte</ion-option>
+                <ion-option value="Rondônia">Rondônia</ion-option>
+                <ion-option value="Roraima">Roraima</ion-option>
+                <ion-option value="Rio Grande do Sul">Rio Grande do Sul</ion-option>
+                <ion-option value="Santa Catarina">Santa Catarina</ion-option>
+                <ion-option value="Sergipe">Sergipe</ion-option>
+                <ion-option value="São Paulo">São Paulo</ion-option>
+                <ion-option value="Tocantins">Tocantins</ion-option>
+            </ion-select>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.estado?.errors?.required && form.controls.estado.touched">
+            <ion-label class="error-text"> Estado é Obrigatório </ion-label>
+        </span>
+        <br>
+        <ion-item>
+            <ion-label color="primary" floating>CEP</ion-label>
+            <ion-input [brmasker]="{mask:'00000-000', len:9}" formControlName="cep"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.cep?.errors?.required && form.controls.cep.touched">
+            <ion-label class="error-text"> CEP é Obrigatório </ion-label>
+        </span>
+        <span class="error" *ngIf="form.controls.cep?.errors?.minlength && form.controls.cep.touched">
+            <ion-label class="error-text"> Insira pelo menos {{ form.controls.cep?.errors?.minlength?.requiredLength }} caracteres </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Celular</ion-label>
+            <ion-input [brmasker]="{mask:'(00)00000-0000', len:14}" formControlName="celular"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.celular?.errors?.required && form.controls.celular.touched">
+            <ion-label class="error-text"> Celular é Obrigatório </ion-label>
+        </span>
+        <span class="error" *ngIf="form.controls.celular?.errors?.minlength && form.controls.celular.touched">
+            <ion-label class="error-text"> Insira pelo menos {{ form.controls.celular?.errors?.minlength?.requiredLength }} caracteres </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Número do Cartão</ion-label>
+            <ion-input [brmasker]="{mask:'0000 0000 0000 0000', len:19}" formControlName="nCartao"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.nCartao?.errors?.required && form.controls.nCartao.touched">
+            <ion-label class="error-text"> Número do Cartão é Obrigatório </ion-label>
+        </span>
+        <span class="error" *ngIf="form.controls.nCartao?.errors?.minlength && form.controls.nCartao.touched">
+            <ion-label class="error-text"> Insira pelo menos {{ form.controls.nCartao?.errors?.minlength?.requiredLength }} caracteres </ion-label>
+        </span>
+        <ion-item>
+            <ion-label color="primary" floating>Data de Vencimento</ion-label>
+            <ion-input [brmasker]="{mask:'00/00', len:5}" formControlName="dataVenc"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.dataVenc?.errors?.required && form.controls.dataVenc.touched">
+            <ion-label class="error-text"> Data de Vencimento é Obrigatório </ion-label>
+        </span>
+        <span class="error" *ngIf="form.controls.dataVenc?.errors?.minlength && form.controls.dataVenc.touched">
+            <ion-label class="error-text"> Insira pelo menos {{ form.controls.dataVenc?.errors?.minlength?.requiredLength }} caracteres </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Codigo de Segurança</ion-label>
+            <ion-input [brmasker]="{mask:'000', len:3}" formControlName="codigo"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.codigo?.errors?.required && form.controls.codigo.touched">
+            <ion-label class="error-text"> Codigo de Segurança é Obrigatório </ion-label>
+        </span>
+        <span class="error" *ngIf="form.controls.codigo?.errors?.minlength && form.controls.codigo.touched">
+            <ion-label class="error-text"> Insira pelo menos {{ form.controls.codigo?.errors?.minlength?.requiredLength }} caracteres </ion-label>
+        </span>
+    
+        <ion-item>
+            <ion-label color="primary" floating>Nome (Como esta escríto no cartão)</ion-label>
+            <ion-input formControlName="nomeCartao"></ion-input>
+        </ion-item>
+        <span class="error" *ngIf="form.controls.nomeCartao?.errors?.required && form.controls.nomeCartao.touched">
+            <ion-label class="error-text"> Nome </ion-label>
+        </span>
+
+        <br><br>
+
+        <button ion-button full type="submit">Entrar</button>
+
+    </form>
+  
+  </ion-content>
+  

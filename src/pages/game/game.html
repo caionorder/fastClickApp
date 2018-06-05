@@ -1,0 +1,83 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list *ngIf="logged()">
+      <ion-item class="btn-menu">
+        <ion-thumbnail style="max-width: 40px!important;min-width: 40px;border-radius: 20px; background:url(https://scontent.fbfh1-2.fna.fbcdn.net/v/t31.0-8/20729078_1556885667706439_231851558754113945_o.jpg?_nc_cat=0&oh=fc782a7ba0b28920a184c84924647ef3&oe=5B6ABF23);max-height: 40px;min-height: 40px;" item-start>
+          <span style="
+    color: #292929;
+    text-align: center;
+    width: 100%;
+    display: block;
+    height: 100%;
+    z-index: 1000;
+    line-height: 42px;
+    font-size: 23px;
+">{{substr()}}</span>
+        </ion-thumbnail>
+
+        <div>Olá, {{localStorage.nome}}</div>
+      </ion-item>
+
+    </ion-list>
+    <div style="padding: 15px; padding-top: 0px; padding-bottom: 0px;">
+    	
+      <button *ngIf="logged()" [navPush]="planos" ion-button round full color="dark">
+        <ion-icon name="usd"></ion-icon>
+        Comprar Crédito
+      </button>
+    </div>
+    <ion-list>
+
+    <button [navPush]="institucionalPage" [navParams]="{id:7}" icon-left ion-item class="btn-menu">
+      <ion-icon name="home"></ion-icon> QUEM SOMOS
+    </button>
+    <button [navPush]="institucionalPage" [navParams]="{id:6}" icon-left ion-item class="btn-menu">
+      <ion-icon name="help"></ion-icon> COMO FUNCIONA
+    </button>
+    <button [navPush]="institucionalPage" [navParams]="{id:5}" icon-left ion-item class="btn-menu">
+      <ion-icon name="document"></ion-icon> TERMOS DE USO
+    </button>
+    <button [navPush]="institucionalPage" [navParams]="{id:4}" icon-left ion-item class="btn-menu">
+      <ion-icon name="book"></ion-icon> REGRAS DO JOGO
+    </button>
+    <button [navPush]="institucionalPage" [navParams]="{id:3}" icon-left ion-item class="btn-menu">
+      <ion-icon name="at"></ion-icon> FALE CONOSCO
+    </button>
+    <button [navPush]="institucionalPage" [navParams]="{id:2}" icon-left ion-item class="btn-menu">
+      <ion-icon name="code-working"></ion-icon> DESENVOLVEDORES
+    </button>
+    <button (click)="reOpenVideo()" icon-left ion-item class="btn-menu">
+      <ion-icon name="videocam"></ion-icon> VÍDEO
+    </button>
+
+
+    <div style="padding: 10px 15px;">
+      <!-- <button (click)="openLink('http://fastclickapp.com.br')" ion-button round full color="secondary">
+      	Entrar no Site
+      </button> -->
+      <a href="http://fastclickapp.com.br/" target="_blank" ion-button round full color="secondary">Entrar no Site</a>
+    </div>	
+    
+    <a href="https://www.instagram.com/fastclickapp/" target="_blank" icon-left ion-item class="btn-menu">
+      <ion-icon name="logo-instagram"></ion-icon> @fastclick
+    </a>
+
+    <a href="https://www.facebook.com/fastclickapp" target="_blank" icon-left ion-item class="btn-menu">
+      <ion-icon name="logo-facebook"></ion-icon> /fastclick
+    </a>
+
+    <!-- <button (click)="openLink('https://www.instagram.com/fastclickapp/')" icon-left ion-item class="btn-menu">
+      <ion-icon name="logo-instagram"></ion-icon> @fastclick
+    </button>
+    <button (click)="openLink('https://www.facebook.com/fastclickapp')" icon-left ion-item class="btn-menu">
+      <ion-icon name="logo-facebook"></ion-icon> /fastclick
+    </button> -->
+  </ion-list>
+</ion-content>
+</ion-menu>
+<ion-nav #content [root]="listGame"></ion-nav>
