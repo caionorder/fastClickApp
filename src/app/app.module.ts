@@ -77,21 +77,24 @@ declare var window:any;
     StatusBar,
     CadastroService,
     PagamentoService,
-    PlayerService,
     Facebook,
     ListService,
     LoginService,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PlayerService,
     ]
 })
 export class AppModule {
-    constructor(private appUpdate: AppUpdate) {
+    constructor() {
         
         const updateUrl = 'http://www.fastclickapp.com.br/app_updates/update.xml';
-        this.appUpdate.checkAppUpdate(updateUrl).then(() => { 
-            alert("Por favor atualize seu Aplicativo.");
-         });
+        if(!window.AppUpdate) {
+            return;
+        }
+        window.AppUpdate.checkAppUpdate((onSuccess) => {
+            alert("Por favor atualize seu aplicativo.");
+        });
         var versionCode = window.AppVersion.build;
         console.log(versionCode);
     }
