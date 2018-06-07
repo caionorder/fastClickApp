@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
+import { AppUpdate } from '@ionic-native/app-update';
 
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
@@ -35,9 +36,9 @@ import { CadastroService } from '../pages/cadastro/cadastro.service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+declare var window:any;
 @NgModule({
-  declarations: [
+    declarations: [
     MyApp,
     LoginPage,
     PagamentoPage,
@@ -50,15 +51,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RankingPage,
     PlanosPage,
     InstitucionalPage
-  ],
-  imports: [
+    ],
+    imports: [
     BrowserModule,
     BrMaskerModule,
     IonicModule.forRoot(MyApp),
     HttpModule
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
     MyApp,
     CadastroPage,
     LoginPage,
@@ -71,8 +72,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RankingPage,
     PlanosPage,
     InstitucionalPage
-  ],
-  providers: [
+    ],
+    providers: [
     StatusBar,
     CadastroService,
     PagamentoService,
@@ -82,6 +83,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginService,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    ]
 })
-export class AppModule {}
+export class AppModule {
+    constructor(private appUpdate: AppUpdate) {
+        
+        const updateUrl = 'http://www.fastclickapp.com.br/app_updates/update.xml';
+        this.appUpdate.checkAppUpdate(updateUrl).then(() => { 
+            alert("Por favor atualize seu Aplicativo.");
+         });
+        var versionCode = window.AppVersion.build;
+        console.log(versionCode);
+    }
+}
