@@ -10,7 +10,7 @@ import { ViewController } from 'ionic-angular';
 
   <ion-slide *ngIf="localStorage.openVideo">
   <div style="width: 100%; text-align:center; color: #fff;">
-  <img style="width: 160px;margin-top: 26px;" src="./assets/img/logo.png" />
+  <img style="width: 160px;margin-top: 26px;" src="assets/img/logo.png" />
   <h2>Bem vindo ao Fast Click App</h2><br>
   </div>
 
@@ -21,7 +21,7 @@ import { ViewController } from 'ionic-angular';
   <ion-slide *ngIf="!localStorage.openVideo">
   
   <video autoplay width="100%" controls>
-    <source src="/assets/video/video.mp4" type="video/mp4">
+    <source src="assets/video/video.mp4" type="video/mp4">
   </video>
    <div style="text-align:center;" padding>
   <button (click)="dismiss()" ion-button small round color="secondary">Fechar</button>

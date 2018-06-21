@@ -37,7 +37,7 @@ $SIDEMENU_BOTTOM: #E90556;
 
 $toolbar-background: #AC0B3E;
 .toolbar-background-md {
-    background-image: url(../../assets/img/bg-hme.png)!important;
+    background-image: url(assets/img/bg-hme.png)!important;
     background-size:cover!important;
     background-position:0px 480px !important;
 }
@@ -56,7 +56,7 @@ ion-menu {
 }
 ion-menu .content {
 
-    background: url(../../assets/img/bg-hme.png);
+    background: url(assets/img/bg-hme.png);
     background-size:cover;
     background-repeat: repeat-x;
     ion-list {
@@ -95,7 +95,7 @@ nav#menuresponsivo #rede-sociais a .fa {
 }
 
 .toolbar-background-ios{
-    background-image: url(../../assets/img/bg-hme.png) !important;
+    background-image: url(assets/img/bg-hme.png) !important;
     background-position-y: 450px!important;
     background-size: cover!important;
 }

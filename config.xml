@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.app.fastclick" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="br.com.fastclickapp.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Fast Click</name>
     <description>App fast click.</description>
     <author email="douglasdm97@gmail.com" href="http://grupoartisan.com.br/">Douglas Gabriel Cardoso</author>
@@ -76,19 +76,20 @@
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
         <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
-    <plugin name="cordova-plugin-device" spec="2.0.2" />
-    <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
-    <plugin name="cordova-plugin-ionic-webview" spec="1.1.19" />
-    <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
-    <engine name="android" spec="~7.0.0" />
+    <allow-navigation href="http://192.168.0.36:8100" />
+    <allow-navigation href="http://192.168.0.11:8100" />
+    <allow-navigation href="http://192.168.1.31:8100" />
+    <engine name="android" spec="^7.0.0" />
+    <engine name="ios" spec="^4.4.0" />
+    <plugin name="cordova-plugin-app-update" spec="^1.6.0" />
+    <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-facebook4" spec="^2.1.0">
         <variable name="APP_ID" value="205335910265620" />
         <variable name="APP_NAME" value="fast-click" />
         <variable name="ANDROID_SDK_VERSION" value="4.+" />
     </plugin>
-    <allow-navigation href="http://192.168.0.36:8100" />
-    <allow-navigation href="http://192.168.0.11:8100" />
-    <allow-navigation href="http://192.168.1.31:8100" />
-    <plugin name="cordova-plugin-app-update" spec="^1.6.0" />
+    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.2" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^1.2.1" />
+    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
 </widget>
